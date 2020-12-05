@@ -1,5 +1,5 @@
 
-
+#only for Part 1 of day 3
 
 #open file
 forestFile=open(('/home/anjab/PycharmProjects/AdventofCode/venv/numbers.txt'), 'r')

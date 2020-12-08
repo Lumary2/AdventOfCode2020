@@ -1,12 +1,11 @@
 import re
 
-passportFile=open(('/home/anjab/PycharmProjects/AdventofCode/venv/numbers.txt'), 'r')
+passportFile=open(('/home/anjab/PycharmProjects/AdventofCode/venv/passports.txt'), 'r')
 file=passportFile.read()
 
 separatedPassports=file.split('\n\n')
 
-validCount= 0
-
+validPassportCount= 0
 
 def checkValidity(regex, passportElements):
     if (regex==r"(cid.*)"):
@@ -49,11 +48,11 @@ for passport in separatedPassports:
 
     regexArray=[r"(cid.*)",r"(byr.*)",r"(pid.*)",r"(eyr.*)",r"(hcl.*)",r"(iyr.*)",r"(hgt.*)",r"(ecl.*)"]
 
-    trueCountPWElements=0
+    CountPWElements=0
     validElementCount=0
     for regex in regexArray:
         if ((bool(re.search(regex, passport)))==True):
-            trueCountPWElements=trueCountPWElements+1
+            CountPWElements= CountPWElements + 1
             element=re.search(regex,passport).group(1)
 
             deleteBlanks=element.split(' ')
@@ -64,12 +63,12 @@ for passport in separatedPassports:
             if(validElement==True):
                 validElementCount=validElementCount+1
 
-    if(validElementCount==8 and trueCountPWElements==8):
-                #print(passport+'\n')
-        validCount=validCount+1
-    if(validElementCount==7 and trueCountPWElements==7 and (bool(re.search(r"(cid.*)", passport)))==False):
-        validCount = validCount + 1
+    if(validElementCount==8 and CountPWElements==8):
+
+        validPassportCount= validPassportCount + 1
+    if(validElementCount==7 and CountPWElements==7 and (bool(re.search(r"(cid.*)", passport)))==False):
+        validPassportCount = validPassportCount + 1
 
 
 
-print(validCount)
+print(validPassportCount)

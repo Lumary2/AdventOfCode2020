@@ -8,7 +8,7 @@ answers=file.split('\n\n')
 
 
 
-#Part Two
+#Part 2
 sumAnswers=0
 
 for answer in answers:

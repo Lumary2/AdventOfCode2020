@@ -18,8 +18,8 @@ for ticket in file:
 
     #loop through chars of ticket
     countRow=0
-    countCol=0
-    for element in tokket2:
+    countCol=1
+    for element in ticket:
 
         if(rangeHighRow==rangeLowRow):
             row=rangeHighRow

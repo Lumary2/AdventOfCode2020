@@ -19,7 +19,7 @@ for ticket in file:
     #loop through chars of ticket
     countRow=0
     countCol=0
-    for element in ticket2:
+    for element in tikket2:
 
         if(rangeHighRow==rangeLowRow):
             row=rangeHighRow
